@@ -1,4 +1,5 @@
 import logo from '../../assets/logo.png'
+import { NavLink } from 'react-router-dom'
 
 export function Header() {
   return (
@@ -11,10 +12,22 @@ export function Header() {
         </div>
       </div>
 
-      <div className="flex items-end justify-end">
-        <a href="" className="text-gray-100">
-          Teste
-        </a>
+      <div className="flex items-end justify-end gap-2 pr-5">
+        <nav className="gap-2">
+          <NavLink
+            to={''}
+            className="text-gray-100 bg-gray-400 rounded-t-md p-2 active:bg-purple"
+          >
+            Cadastrar
+          </NavLink>
+
+          <NavLink
+            to={''}
+            className="text-gray-100 bg-gray-400 rounded-t-md p-2 active:bg-purple"
+          >
+            Importar
+          </NavLink>
+        </nav>
       </div>
     </div>
   )
