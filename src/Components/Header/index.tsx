@@ -21,7 +21,7 @@ export function Header() {
       <div className="flex items-end justify-end gap-2 pr-5">
         <nav className=" flex gap-1">
           <NavLink
-            to={'/'}
+            to={'/home'}
             className={cn(
               'text-gray-100 bg-gray-400 rounded-t-md p-2 cursor-pointer hover:bg-purple',
               {
