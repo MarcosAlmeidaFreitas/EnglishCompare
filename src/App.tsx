@@ -1,8 +1,10 @@
-import { Header } from './Components/Header'
-import './Global.css'
-
+import { BrowserRouter } from 'react-router-dom'
+import './styles/Global.css'
+import { Router } from './Router'
 export function App() {
   return (
-    <Header></Header>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   )
 }

@@ -1,7 +1,13 @@
+import React from 'react'
 import logo from '../../assets/logo.png'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
+import { Routes } from '../../Constants/routes'
+import { cn } from '../../utils/Cn_Tailwind'
 
 export function Header() {
+  const location = useLocation()
+  const isScreenSelected = (route: Routes): boolean =>
+    location.pathname.includes(route)
   return (
     <div className="bg-gray-900 pt-4 flex flex-col justify-between">
       <div className=" flex justify-center items-center gap-3 mx-auto">
@@ -13,17 +19,27 @@ export function Header() {
       </div>
 
       <div className="flex items-end justify-end gap-2 pr-5">
-        <nav className="gap-2">
+        <nav className=" flex gap-1">
           <NavLink
-            to={''}
-            className="text-gray-100 bg-gray-400 rounded-t-md p-2 active:bg-purple"
+            to={'/'}
+            className={cn(
+              'text-gray-100 bg-gray-400 rounded-t-md p-2 cursor-pointer hover:bg-purple',
+              {
+                'bg-purple': isScreenSelected(Routes.HOME),
+              },
+            )}
           >
             Cadastrar
           </NavLink>
 
           <NavLink
-            to={''}
-            className="text-gray-100 bg-gray-400 rounded-t-md p-2 active:bg-purple"
+            to={'/import'}
+            className={cn(
+              'text-gray-100 bg-gray-400 rounded-t-md p-2 cursor-pointer hover:bg-purple',
+              {
+                'bg-purple': isScreenSelected(Routes.IMPORT),
+              },
+            )}
           >
             Importar
           </NavLink>
