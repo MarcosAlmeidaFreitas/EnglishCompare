@@ -6,6 +6,14 @@ import { cn } from '../../utils/Cn_Tailwind'
 
 export function Header() {
   const location = useLocation()
+  const isScreenSelectedHome = (route: Routes): boolean => {
+    if (location.pathname === route) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   const isScreenSelected = (route: Routes): boolean =>
     location.pathname.includes(route)
   return (
@@ -21,11 +29,23 @@ export function Header() {
       <div className="flex items-end justify-end gap-2 pr-5">
         <nav className=" flex gap-1">
           <NavLink
-            to={'/home'}
+            to={'/'}
             className={cn(
               'text-gray-100 bg-gray-400 rounded-t-md p-2 cursor-pointer hover:bg-purple',
               {
-                'bg-purple': isScreenSelected(Routes.HOME),
+                'bg-purple': isScreenSelectedHome(Routes.HOME),
+              },
+            )}
+          >
+            Sobre
+          </NavLink>
+
+          <NavLink
+            to={'/register'}
+            className={cn(
+              'text-gray-100 bg-gray-400 rounded-t-md p-2 cursor-pointer hover:bg-purple',
+              {
+                'bg-purple': isScreenSelected(Routes.REGISTER),
               },
             )}
           >
