@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import { DefaultLayout } from './styles/DefaultLayout'
 import { Home } from './pages/Cadastrar/index'
-import { Import } from './pages/import'
+import { Import } from './pages/Import'
 
 export function Router() {
   return (
